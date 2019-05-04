@@ -1,0 +1,7 @@
+<form [formGroup]="myForm">
+  <label>{{ris}}</label>
+  <label *ngFor = "let i of rV">da-a:({{i}})</label>
+  <button>mostra/nascondi email</button>
+  <input type="email" name="email" class="form-control" [formControl]="myForm.controls['email']" #email>
+  <button></button>
+</form>

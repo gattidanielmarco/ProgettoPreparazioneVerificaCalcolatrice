@@ -1,0 +1,22 @@
+<form [formGroup]="myForm">
+  <div class="form-group">
+  <input type= "number" name="numero1" class="form-control" [formControl]="myForm.controls['numero1']" #numero1>
+  <label>Numero 1</label>
+  <div *ngIf="!myForm.controls['numero1'].valid" class="alert alert-danger">"numero1" non è valido</div>
+  <div *ngIf="myForm.controls['numero1'].hasError('required')" class="alert alert-danger">"numero1" è richiesto</div>
+  </div>
+  <br>
+  <div class="form-group">
+  <input type= "number" name = "numero2" class="form-control" [formControl]="myForm.controls['numero2']'" #numero2>
+  <label>Numero 2</label>
+  <div *ngIf="!myForm.controls['numero2'].valid" class="alert alert-danger">"numero2" non è valido</div>
+  <div *ngIf="myForm.controls['numero2'].hasError('required')" class="alert alert-danger">"numero2" è richiesto</div>
+  </div>
+  <br>
+  <button (click)="somma(numero1,numero2)">+</button>
+  <button (click)="moltiplicazione(numero1,numero2)">*</button>
+  <button (click)="sottrazione(numero1,numero2)">-</button>
+  <button (click)="divisione(numero1,numero2)">/</button>
+
+</form>
+<app-ris-component [ris]="ris" [rV]="risV"></app-ris-component>
