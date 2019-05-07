@@ -1,7 +1,8 @@
-<form [formGroup]="myForm">
-  <label>{{ris}}</label>
-  <label *ngFor = "let i of rV">da-a:({{i}})</label>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+  <label>{{r}}</label>
+  <button (click)="daA()">da-a:</button>
+  <li>{{visua}}</li>
   <button>mostra/nascondi email</button>
-  <input type="email" name="email" class="form-control" [formControl]="myForm.controls['email']" #email>
-  <button></button>
+  <input type="email" name="email" class="form-control" [formControl]="myForm.controls['email']">
+  <button>Submit</button>
 </form>
